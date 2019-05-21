@@ -109,3 +109,26 @@ const nav = document.querySelector('nav')
 nav.addEventListener('click', navEvent => {
     navEvent.preventDefault();
 })
+
+
+
+// /////////////
+
+const div = document.querySelector('.content-destination');
+div.addEventListener('click', (e) => {
+    div.style.background = 'dodgerblue';
+});
+
+const image = document.querySelector('.content-destination > img');
+image.addEventListener('click', (event) => {
+    image.style.filter = 'blur(3px)';
+    event.stopPropagation();
+});
+
+const buttons = document.querySelectorAll('.btn');
+buttons.forEach((button) => {
+    button.setAttribute('draggable', true);
+    button.ondrag = (event) => {
+        button.textContent = 'Whats up I am being dragged';
+    };
+})
